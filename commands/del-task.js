@@ -1,10 +1,8 @@
-const Discord = require("discord.js");
-
 module.exports = {
 	name: 'del-task',
 	description: 'Delete a task from your daily tasks',
 	execute(message, args) {
-
+        const Discord = require("discord.js");
         const exampleEmbed = new Discord.MessageEmbed()
         .setColor('#0099ff')
         .setTitle('Delete Task')
