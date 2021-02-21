@@ -19,15 +19,31 @@ module.exports = {
       },
     };
 
+    newEntry = {
+      userID: message.author.id,
+      task_list: [],
+      date: new Date(),
+    };
+
     var count = 0;
     for (const task of args) {
+      var updateTask = task.trim().split(":")[1];
+      var category = task.trim().split(":")[0].toLowerCase();
+      tempObj = {
+        category: category,
+        name: updateTask,
+        done: false,
+      };
+      newEntry.task_list.push(tempObj);
       console.log(task);
       exampleEmbed.fields.push({
         name: `Task ${count}`,
-        value: task,
+        value: updateTask,
       });
       count++;
     }
+
+    console.log(JSON.stringify(newEntry));
 
     message.channel.send({ embed: exampleEmbed });
   },
