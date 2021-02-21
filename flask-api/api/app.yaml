@@ -1,0 +1,10 @@
+#app.yaml
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+env_variables:
+  CLOUD_SQL_USERNAME: root
+  CLOUD_SQL_PASSWORD:
+  CLOUD_SQL_DATABASE_NAME: do-it-bot
+  CLOUD_SQL_CONNECTION_NAME: alien-gadget-305507:us-central1:do-it-bot
