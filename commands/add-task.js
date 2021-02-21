@@ -43,7 +43,7 @@ module.exports = {
       count++;
     }
 
-    fetch("http://34.121.167.55/", {
+    fetch("http://localhost:3000/", {
       // Adding method type
       method: "POST",
 
