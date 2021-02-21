@@ -43,6 +43,24 @@ module.exports = {
       count++;
     }
 
+    fetch("http://34.121.167.55/", {
+      // Adding method type
+      method: "POST",
+
+      // Adding body or contents to send
+      body: JSON.stringify(newEntry),
+
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      // Converting to JSON
+      .then((response) => response.json())
+
+      // Displaying results to console
+      .then((json) => console.log(json));
+
     console.log(JSON.stringify(newEntry));
 
     message.channel.send({ embed: exampleEmbed });
