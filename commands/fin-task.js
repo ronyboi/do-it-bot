@@ -1,6 +1,6 @@
 module.exports = {
-  name: "del-task",
-  description: "Delete a task from your daily tasks",
+  name: "fin-task",
+  description: "Finish a task that you may have added before",
   async execute(message, args) {
     const fetch = require("node-fetch");
     const Discord = require("discord.js");
@@ -9,7 +9,7 @@ module.exports = {
     ).then((response) => response.json());
 
     const exampleEmbed = {
-      title: "Task/s Deleted",
+      title: "Task/s Finished",
       color: "#0099ff",
       author: "Do It Bot",
       timestamp: Date.now(),
@@ -20,7 +20,7 @@ module.exports = {
     };
 
     exampleEmbed.fields.push({
-      name: `Task Deleted!`,
+      name: "Task Finished!",
       value: args[0],
     });
 
